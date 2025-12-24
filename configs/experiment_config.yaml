@@ -1,0 +1,41 @@
+# Experiment Configuration
+# Config file for ML experiments
+
+# Dataset settings
+dataset:
+  name: iris
+  test_size: 0.2
+  random_state: 42
+
+# Preprocessing settings
+preprocessing:
+  scaling_method: standard  # standard, minmax, robust
+  handle_missing: drop      # drop, impute
+
+# Model settings
+models:
+  logistic_regression:
+    max_iter: 200
+    solver: lbfgs
+    
+  random_forest:
+    n_estimators: 100
+    max_depth: null
+    min_samples_split: 2
+    
+  svm:
+    kernel: rbf
+    C: 1.0
+    gamma: scale
+
+# Training settings
+training:
+  cross_validation: 5
+  verbose: true
+  
+# Output settings
+output:
+  save_model: true
+  model_dir: models/
+  results_dir: results/
+  log_file: logs/training.log
